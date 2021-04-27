@@ -1,7 +1,8 @@
 import { timerForm, curTime, endTime } from "./timer.js";
 import { formatMessage } from "./common.js";
-// import { Howl, Howler } from '../howler.js/dist/howler.js';
-import { DateTime } from "./luxon.js"
+import {Howl} from 'howler';
+import { DateTime } from "luxon";
+
 
 export function timeRemaining(hours, minutes, seconds) {
 
@@ -12,7 +13,7 @@ export function timeRemaining(hours, minutes, seconds) {
         if (userdt.hour == 0 && userdt.minute == 0 && userdt.second == 0) { //если получился 0, то выводим сообщение, выходим из функции
             endTime.innerHTML = formatMessage('Отсчет времени окончен');
             let sound = new Howl({
-                src: ['./src/sound.mp3']
+                src: ['./sound.mp3']
               });
               
               sound.play();
